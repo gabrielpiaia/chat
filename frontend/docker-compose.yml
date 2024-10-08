@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: node:18  # Você pode escolher a versão do Node.js que preferir
+    working_dir: /app
+    volumes:
+      - .:/app  # Monta o diretório atual no container
+    ports:
+      - "8082:8082"  # Mapeia a porta 8081 do container para a porta 8081 da máquina host
+    command: ["npm", "start"]  # Ou o comando que você usa para iniciar sua aplicação
+    networks:
+      - app-network  # Adicionando à rede
+
+networks:
+  app-network:  # Definindo a rede
+

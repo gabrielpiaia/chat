@@ -1,0 +1,18 @@
+# docker-compose.yml (backend)
+version: '3.8'
+
+services:
+  backend:
+    image: node:18  # Escolha a versão do Node.js que preferir
+    working_dir: /app
+    volumes:
+      - .:/app  # Monta o diretório atual no container
+    ports:
+      - "7000:7000"  # Mapeia a porta 7000 do container para a porta 7000 da máquina host
+    command: ["npm", "start"]  # Certifique-se de que "start" esteja definido no seu package.json
+    networks:
+      - app-network  # Adicionando à rede
+
+networks:
+  app-network:  # Definindo a rede
+

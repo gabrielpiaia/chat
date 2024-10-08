@@ -1,0 +1,5 @@
+# Ignorar a pasta node_modules do backend
+/backend/node_modules/
+
+# Ignorar a pasta node_modules do frontend
+/frontend/node_modules/
